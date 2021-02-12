@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { StyleSheet, Text, Dimensions, View, TouchableOpacity, ImageBackground, ScrollView, Image, Button, Modal, ActivityIndicator } from 'react-native';
 import appConfig from './../../app.json';
@@ -17,6 +18,9 @@ import * as navStack from './navigationStack.js';
 // Component
 import CustomDrawer from './customDrawer';
 import CustomBottomTab from './customBottomTab';
+
+// Screen
+import LaunchScreen from '../components/launch';
 
 // Drawer Navigator
 const drawerNavigatorSetting = () => {
@@ -109,8 +113,8 @@ const AppDrawerNavigator = createDrawerNavigator(
 // Switch Navigator
 const AppNavigator = createSwitchNavigator(
   {
-    //  Welcome: { screen: WelcomeScreen },
-    Dashboard: { screen: AppDrawerNavigator }
+    Launch: { screen: LaunchScreen },
+    App: { screen: AppDrawerNavigator }
     // Dashboard: { screen: registrationStatusScreen }
   }
 );
