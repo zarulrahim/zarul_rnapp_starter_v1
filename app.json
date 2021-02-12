@@ -1,4 +1,13 @@
 {
   "name": "zarul_rnapp_starter_v1",
-  "displayName": "zarul_rnapp_starter_v1"
+  "displayName": "zarul_rnapp_starter_v1",
+  "themes": {
+    "primaryColor": "#1a508b",
+    "secondaryColor": "#f48120",
+    "disabledColor": "#8d93ab",
+    "successColor": "#28a745",
+    // text
+    "darkTextColor": "#000",
+    "lightTextColor": "#fff",
+  } 
 }
