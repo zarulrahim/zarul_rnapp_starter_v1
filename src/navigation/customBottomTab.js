@@ -15,21 +15,44 @@ class CustomBottomTab extends Component {
     const routeOptions = this.props.navigation._childrenNavigation
     const isFocused = routeOptions[route.routeName].isFocused()
     const tintColor = isFocused ? this.props.activeTintColor : this.props.inactiveTintColor
-   
+     
+    const styles = {
+      tabItem: {
+        alignItems: 'center', 
+        justifyContent: 'center'
+      },
+      routeLabel: {
+        fontWeight: 'bold', 
+        fontSize: 12, 
+        color: tintColor
+      },
+    }
+
     return (
       <TouchableWithoutFeedback onPress={() => { routeOptions[route.routeName].navigate(route.routeName) }}>
-        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.tabItem}>
           { this.props.renderIcon({ route, focused: isFocused, tintColor: tintColor }) }
-          <Text style={{ fontWeight: 'bold', fontSize: 12, color: tintColor }}>{this.props.getLabelText({ route })}</Text>
+          <Text style={styles.routeLabel}>{this.props.getLabelText({ route })}</Text>
         </View>
       </TouchableWithoutFeedback>
     )
   };
 
   render() {
+    const styles = {
+      contentWrapper: {
+        flexDirection: 'row', 
+        justifyContent: 'space-between', 
+        paddingVertical: 10, 
+        paddingHorizontal: 20, 
+        height: 60, 
+        backgroundColor: "#fff"
+      }
+    }
+
     return (
       <SafeAreaView>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, paddingHorizontal: 20, height: 60, backgroundColor: "#fff" }}>
+        <View style={styles.contentWrapper}>
           {
             this.props.navigation.state.routes.map((route, routeIndex) => {
               return (
